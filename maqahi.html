@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MMKS74CS');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">المقاهي في كل مكان... ماذا يحدث في مدننا؟ | فكر وحدث</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMKS74CS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div id="reading-progress"></div>
+    <button id="backToTopBtn" onclick="backToTop()" aria-label="العودة للأعلى"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <header>
+        <div class="header-left">
+            <button class="nav-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html" class="icon-btn" aria-label="الرئيسية"><i class="fa-solid fa-house-chimney"></i></a>
+        </div>
+        <div class="logo" id="siteLogo">فكر وحدث</div>
+        <div class="glass-tools">
+            <button onclick="changeLang('ar')" class="lang-pill active">🇲🇦 AR</button>
+            <button onclick="changeLang('en')" class="lang-pill">🇬🇧 EN</button>
+            <button onclick="changeLang('fr')" class="lang-pill">🇫🇷 FR</button>
+            <button class="moon-btn" id="themeBtn" onclick="darkMode()"><i class="fa-solid fa-moon"></i></button>
+        </div>
+    </header>
+
+    <div class="side-menu" id="sideMenu">
+        <div class="close-menu" onclick="toggleMenu()"><i class="fa-solid fa-times"></i></div>
+        <a href="index.html"><i class="fa-solid fa-house-chimney"></i> الرئيسية</a>
+    </div>
+
+    <main class="article-container">
+        
+        <img src="cafe.jpg" class="article-main-img" alt="ظاهرة المقاهي الفضاءات البديلة">
+        
+        <a href="index.html" class="badge" data-key="badge_sociology">سوسيولوجيا</a>
+        <h1 id="articleTitle" style="font-size: 2.2rem; margin-bottom: 20px; font-weight: 700; line-height: 1.4;">المقاهي في كل مكان... ماذا يحدث في مدننا؟</h1>
+        
+        <div class="read-time-badge" id="readTimeBadge">
+            <i class="fa-regular fa-clock"></i> <span id="readTimeText">4 دقائق قراءة</span>
+        </div>
+
+        <div class="article-text" id="articleText" style="margin-top: 20px;">
+            <p id="textP1" style="margin-bottom: 15px; font-family: 'Amiri', serif; font-size: 1.2rem; line-height: 1.8;">في غضون السنوات الأخيرة، تحوّل التكاثر السرطاني للمقاهي داخل النسيج الحضري إلى ظاهرة سوسيولوجية لافتة، تستدعي تفكيكاً نقدياً لبنياتنا الثقافية وأنماط عيشنا داخل الفضاء العام. لم تعد المقهى مجرد بقعة جغرافية عابرة لتزجية الوقت أو ارتشاف المشروبات، بل ترقت لتغدو مؤسسة اجتماعية موازية، تعيد هندسة أواصر العلاقات البينية وتأصيل إيقاع الزمن المعيش للأفراد.</p>
+            <p id="textP2" style="margin-bottom: 15px; font-family: 'Amiri', serif; font-size: 1.2rem; line-height: 1.8;">إن طغيان التمدد العمراني وتفاقم آليات الاستلاب الرأسمالي المعاصر، جعلا من هذه الفضاءات ملاذاً سوسيولوجياً بديلاً ومكافئاً لما يُعرف بـ "المجالات الثالثة" (The Third Place). ففي كنف المقاهي، تتهاوى الحدود الصارمة بين المجالين العام والخاص، لتستحيل الطاولات المستديرة والصامتة أحياناً إلى منابر حيوية للسجال الفكري، والتحليل السياسي، أو ملاذات مؤقتة للتخفف من وطأة الضغوطات اليومية والإيقاع الآلي القاسي للمدينة.</p>
+        </div>
+
+        <div class="article-actions" style="display: flex; gap: 15px; justify-content: center; margin-bottom: 40px;">
+            <button class="action-btn" onclick="handleLike()">
+                <i class="fa-regular fa-thumbs-up"></i> <span id="likeText">إعجاب</span> (<span id="likeCount">0</span>)
+            </button>
+            <button class="action-btn" onclick="handleDislike()">
+                <i class="fa-regular fa-thumbs-down"></i> <span id="dislikeText">لم يعجبني</span> (<span id="dislikeCount">0</span>)
+            </button>
+            <button class="action-btn">
+                <i class="fa-regular fa-bookmark"></i> <span id="saveText">حفظ المقال</span>
+            </button>
+        </div>
+
+        <section class="comments-section" style="border-top: 1px solid #333; padding-top: 30px;">
+            <h3 id="commentTitle" style="border-right: 4px solid var(--primary-color); padding-right: 10px; margin-bottom: 20px;">شارك برأيك النقدي حول الظاهرة:</h3>
+            
+            <form class="comment-form" onsubmit="event.preventDefault();">
+                <textarea id="commentText" placeholder="اكتب قراءتك أو تعليقك هنا بكل حرية فكرية..."></textarea>
+                <input type="text" id="commentAuthor" placeholder="اسمك المستعار أو الحقيقي...">
+                <button type="button" class="submit-comment-btn" id="submitBtn" onclick="addComment()">نشر التعليق في الأرشيف</button>
+            </form>
+
+            <div id="commentsContainer" style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px;"></div>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+        }
+
+        function darkMode(){
+            document.body.classList.toggle("light-mode");
+            document.body.classList.toggle("dark");
+            const icon = document.querySelector("#themeBtn i");
+            icon.className = document.body.classList.contains("light-mode") ? "fa-solid fa-sun" : "fa-solid fa-moon";
+        }
+
+        window.onscroll = function() {
+            myFunction();
+            scrollFunction();
+        };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("reading-progress").style.width = scrolled + "%";
+        }
+
+        function scrollFunction() {
+            var btn = document.getElementById("backToTopBtn");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                btn.classList.add("show");
+            } else {
+                btn.classList.remove("show");
+            }
+        }
+
+        function backToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        let likes = 0, dislikes = 0;
+        function handleLike() { 
+            likes++; 
+            document.getElementById('likeCount').textContent = likes; 
+        }
+        function handleDislike() { 
+            dislikes++; 
+            document.getElementById('dislikeCount').textContent = dislikes; 
+        }
+
+        function addComment() {
+            const text = document.getElementById('commentText').value.trim();
+            const author = document.getElementById('commentAuthor').value.trim() || (document.documentElement.lang === 'fr' ? "Penseur anonyme" : document.documentElement.lang === 'en' ? "Anonymous thinker" : "مفكر عابر");
+            
+            if(text === "") return;
+
+            const container = document.getElementById('commentsContainer');
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment-box';
+
+            commentDiv.innerHTML = `
+                <strong style="color: var(--primary-color); display: block; margin-bottom: 8px; font-weight:700;">${author}</strong>
+                <p style="font-size: 1rem; line-height: 1.6; opacity: 0.9; color: #ddd; margin: 0;">${text}</p>
+            `;
+
+            container.insertBefore(commentDiv, container.firstChild);
+            
+            document.getElementById('commentText').value = "";
+            document.getElementById('commentAuthor').value = "";
+        }
+
+        const translations = {
+            ar: {
+                pageTitle: "المقاهي في كل مكان... ماذا يحدث في مدننا؟ | فكر وحدث",
+                logo: "فكر وحدث",
+                badge: "سوسيولوجيا",
+                title: "المقاهي في كل مكان... ماذا يحدث في مدننا؟",
+                readTime: "4 دقائق قراءة",
+                p1: "في غضون السنوات الأخيرة، تحوّل التكاثر السرطاني للمقاهي داخل النسيج الحضري إلى ظاهرة سوسيولوجية لافتة، تستدعي تفكيكاً نقدياً لبنياتنا الثقافية وأنماط عيشنا داخل الفضاء العام. لم تعد المقهى مجرد بقعة جغرافية عابرة لتزجية الوقت أو ارتشاف المشروبات، بل ترقت لتغدو مؤسسة اجتماعية موازية، تعيد هندسة أواصر العلاقات البينية وتأصيل إيقاع الزمن المعيش للأفراد.",
+                p2: "إن طغيان التمدد العمراني وتفاقم آليات الاستلاب الرأسمالي المعاصر، جعلا من هذه الفضاءات ملاذاً سوسيولوجياً بديلاً ومكافئاً لما يُعرف بـ \"المجالات الثالثة\" (The Third Place). ففي كنف المقاهي، تتهاوى الحدود الصارمة بين المجالين العام والخاص, لتستحيل الطاولات المستديرة والصامتة أحياناً إلى منابر حيوية للسجال الفكري، والتحليل السياسي، أو ملاذات مؤقتة للتخفف من وطأة الضغوطات اليومية والإيقاع الآلي القاسي للمدينة.",
+                like: "إعجاب",
+                dislike: "لم يعجبني",
+                save: "حفظ المقال",
+                commentTitle: "شارك برأيك النقدي حول الظاهرة:",
+                textareaPlaceholder: "اكتب قراءتك أو تعليقك هنا بكل حرية فكرية...",
+                authorPlaceholder: "اسمك المستعار أو الحقيقي...",
+                submitBtn: "نشر التعليق في الأرشيف",
+                dir: "rtl"
+            },
+            en: {
+                pageTitle: "Cafes everywhere... what is happening in our cities? | Think & Event",
+                logo: "Think & Event",
+                badge: "Sociology",
+                title: "Cafes everywhere... what is happening in our cities?",
+                readTime: "4 min read",
+                p1: "In recent years, the cancerous proliferation of cafes within the urban fabric has turned into a remarkable sociological phenomenon, calling for a critical deconstruction of our cultural structures and our lifestyles within the public space. The cafe is no longer just a fleeting geographical spot to pass the time or sip drinks, but has elevated to become a parallel social institution, reengineering the bonds of interrelationships and entrenching the rhythm of individuals' lived time.",
+                p2: "The tyranny of urban expansion and the exacerbation of contemporary capitalist alienation mechanisms have made these spaces an alternative sociological refuge and equivalent to what is known as 'The Third Place'. Under the shelter of cafes, the strict boundaries between the public and private spheres collapse, and the round and sometimes silent tables transform into vital platforms for intellectual debate, political analysis, or temporary havens to relieve the burden of daily pressures and the harsh mechanical rhythm of the city.",
+                like: "Like",
+                dislike: "Dislike",
+                save: "Save Article",
+                commentTitle: "Share your critical opinion on the phenomenon:",
+                textareaPlaceholder: "Write your reading or comment here with full intellectual freedom...",
+                authorPlaceholder: "Your pseudonym or real name...",
+                submitBtn: "Publish the comment in the archive",
+                dir: "ltr"
+            },
+            fr: {
+                pageTitle: "Les cafés partout... que se passe-t-il dans nos villes? | Penser & Événement",
+                logo: "Penser & Événement",
+                badge: "Sociologie",
+                title: "Les cafés partout... que se passe-t-il dans nos villes?",
+                readTime: "4 min de lecture",
+                p1: "Ces dernières années, la prolifération cancéreuse des cafés au sein du tissu urbain s'est transformée en un phénomène sociologique remarquable, appelant à une déconstruction critique de nos structures culturelles et de nos modes de vie au sein de l'espace public. Le café n'est plus simplement un lieu géographique éphémère pour tuer le temps ou siroter des boissons, mais s'est élevé pour devenir une institution sociale parallèle, remodelant les liens des relations interpersonnelles et enracinant le rythme du temps vécu par les individus.",
+                p2: "La tyrannie de l'expansion urbaine et l'exacerbation des mécanismes contemporains d'aliénation capitaliste ont fait de ces espaces un refuge sociologique alternatif et l'équivalent de ce que l'on appelle le « Troisième lieu » (The Third Place). Sous l'abri des cafés, les frontières strictes entre les sphères publique et privée s'effondrent, et les tables rondes et parfois silencieuses se transforment en tribunes vitales pour le débat intellectuel, l'analyse politique, ou des havres temporaires pour alléger le fardeau des pressions quotidiennes et le rythme mécanique rigoureux de la ville.",
+                like: "J'aime",
+                dislike: "Je n'aime pas",
+                save: "Enregistrer l'article",
+                commentTitle: "Partagez votre avis critique sur le phénomène :",
+                textareaPlaceholder: "Écrivez votre lecture ou commentaire ici en toute liberté intellectuelle...",
+                authorPlaceholder: "Votre pseudonyme ou vrai nom...",
+                submitBtn: "Publier le commentaire dans les archives",
+                dir: "ltr"
+            }
+        };
+
+        function changeLang(lang) {
+            const data = translations[lang];
+            if (!data) return;
+            
+            document.documentElement.dir = data.dir;
+            document.documentElement.lang = lang;
+            
+            document.getElementById("pageTitle").textContent = data.pageTitle;
+            document.getElementById("siteLogo").textContent = data.logo;
+            
+            document.querySelector('.badge').textContent = data.badge;
+            document.getElementById("articleTitle").textContent = data.title;
+            document.getElementById("readTimeText").textContent = data.readTime;
+            
+            document.getElementById("textP1").textContent = data.p1;
+            document.getElementById("textP2").textContent = data.p2;
+            
+            document.getElementById("likeText").textContent = data.like;
+            document.getElementById("dislikeText").textContent = data.dislike;
+            document.getElementById("saveText").textContent = data.save;
+            
+            document.getElementById("commentTitle").textContent = data.commentTitle;
+            document.getElementById("commentText").placeholder = data.textareaPlaceholder;
+            document.getElementById("commentAuthor").placeholder = data.authorPlaceholder;
+            document.getElementById("submitBtn").textContent = data.submitBtn;
+
+            document.querySelectorAll('.lang-pill').forEach(btn => btn.classList.remove('active'));
+            if(window.event && window.event.currentTarget) {
+                window.event.currentTarget.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
