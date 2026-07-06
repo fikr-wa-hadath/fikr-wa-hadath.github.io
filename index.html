@@ -81,42 +81,7 @@
         </div>
         
         <div class="news-grid-flexible" id="articlesGrid">
-            <article class="story-card" data-category="sociology">
-                <div class="story-thumbnail">
-                    <img src="cafe.jpg" alt="سوسيولوجيا المقاهي">
-                    <div class="gradient-overlay"></div>
-                    <div class="story-overlay-content">
-                        <span class="badge" id="badge1">سوسيولوجيا</span>
-                        <h1><a href="maqahi.html" id="title1">المقاهي في كل مكان... ماذا يحدث في مدننا؟</a></h1>
-                        
-                        <div class="article-date-badge" style="font-size: 0.72rem; color: rgba(255, 255, 255, 0.6); margin-top: 4px;">
-                            <i class="fa-regular fa-calendar-days"></i> <span id="date1" class="article-date-txt">21 يونيو 2026</span>
-                        </div>
-
-                        <div class="read-time-badge">
-                            <i class="fa-regular fa-clock"></i> <span id="readTime1">قراءة: 5 دقائق</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="story-card small" data-category="philosophy">
-                <div class="small-thumb">
-                    <img src="nietzsche_cover.jpg" alt="فريدريش نيتشه">
-                </div>
-                <div class="story-info">
-                    <span class="badge" id="badge2">فلسفة</span>
-                    <h2><a href="nietzsche.html" id="title2">نيتشه وفلسفة القوة: تفكيك الأصنام الفكرية العتيقة</a></h2>
-                    
-                    <div class="article-date-badge" style="font-size: 0.72rem; color: rgba(0, 0, 0, 0.5); margin-top: 4px;" id="dateBadge2">
-                        <i class="fa-regular fa-calendar-days"></i> <span id="date2" class="article-date-txt">21 يونيو 2026</span>
-                    </div>
-
-                    <div class="read-time-badge">
-                        <i class="fa-regular fa-clock"></i> <span id="readTime2">قراءة: 8 دقائق</span>
-                    </div>
-                </div>
-            </article>
+            <!-- تم إفراغ هذا القسم -->
         </div>
     </main>
 
@@ -148,27 +113,10 @@
             
             const lang = document.documentElement.lang || 'ar';
             document.getElementById("sectionHeaderTitle").textContent = translations[lang].sectionTitles[category] || translations[lang].sectionTitles['all'];
-            
-            document.querySelectorAll('.story-card').forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
         }
 
         function searchSite() {
-            let query = document.getElementById("searchInput").value.trim().toLowerCase();
-            document.querySelectorAll('.story-card').forEach(card => {
-                let title = card.querySelector('h1, h2').textContent.toLowerCase();
-                let badge = card.querySelector('.badge').textContent.toLowerCase();
-                if (query === "" || title.includes(query) || badge.includes(query)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
+            // وظيفة البحث ستبقى تعمل إذا أضفت مقالات لاحقاً
         }
 
         const translations = {
@@ -184,14 +132,6 @@
                 texts: "نصوص", 
                 wisdom: "حكمة", 
                 photo: "صورة", 
-                badge1: "سوسيولوجيا",
-                title1: "المقاهي في كل مكان... ماذا يحدث في مدننا؟",
-                date1: "21 يونيو 2026",
-                readTime1: "قراءة: 5 دقائق",
-                badge2: "فلسفة",
-                title2: "نيتشه وفلسفة القوة: تفكيك الأصنام الفكرية العتيقة",
-                date2: "21 يونيو 2026",
-                readTime2: "قراءة: 8 دقائق",
                 searchPlaceholder: "ابحث في أرشيف فكر وحدث الفلسفي...",
                 sectionTitles: {
                     all: "أحدث المقالات الفكرية",
@@ -219,14 +159,6 @@
                 texts: "Texts", 
                 wisdom: "Wisdom", 
                 photo: "Photo", 
-                badge1: "Sociology",
-                title1: "Cafes everywhere... what is happening in our cities?",
-                date1: "21 June 2026",
-                readTime1: "5 min read",
-                badge2: "Philosophy",
-                title2: "Nietzsche and the Philosophy of Power: Deconstructing Ancient Intellectual Idols",
-                date2: "21 June 2026",
-                readTime2: "8 min read",
                 searchPlaceholder: "Search in Think & Event philosophical archive...",
                 sectionTitles: {
                     all: "Latest Intellectual Articles",
@@ -254,14 +186,6 @@
                 texts: "Textes", 
                 wisdom: "Sagesse", 
                 photo: "Photo", 
-                badge1: "Sociologie",
-                title1: "Les cafés partout... que se passe-t-il dans nos villes?",
-                date1: "21 juin 2026",
-                readTime1: "5 min de lecture",
-                badge2: "Philosophie",
-                title2: "Nietzsche et la philosophie de la puissance: Déconstruire les anciennes idoles intellectuelles",
-                date2: "21 juin 2026",
-                readTime2: "8 min de lecture",
                 searchPlaceholder: "Rechercher dans les archives philosophiques de Penser & Événement...",
                 sectionTitles: {
                     all: "Derniers Articles Intellectuels",
@@ -279,6 +203,7 @@
             }
         };
 
+        let dateInterval;
         function startLiveDate(lang = 'ar') {
             clearInterval(dateInterval);
             dateInterval = setInterval(() => {
@@ -307,7 +232,6 @@
             }, 1000);
         }
 
-        let dateInterval;
         window.onload = function() {
             startLiveDate('ar');
         };
@@ -321,17 +245,6 @@
             
             document.getElementById("siteLogo").textContent = data.logo;
             document.getElementById("sectionHeaderTitle").textContent = data.sectionTitles[currentSectionKey] || data.sectionTitles['all'];
-            
-            document.getElementById("badge1").textContent = data.badge1;
-            document.getElementById("title1").textContent = data.title1;
-            document.getElementById("date1").textContent = data.date1;
-            document.getElementById("readTime1").textContent = data.readTime1;
-
-            document.getElementById("badge2").textContent = data.badge2;
-            document.getElementById("title2").textContent = data.title2;
-            document.getElementById("date2").textContent = data.date2;
-            document.getElementById("readTime2").textContent = data.readTime2;
-
             document.getElementById("searchInput").placeholder = data.searchPlaceholder;
             
             document.querySelectorAll('.lang-pill').forEach(btn => btn.classList.remove('active'));
@@ -346,8 +259,6 @@
 
             startLiveDate(lang);
         }
-
-        const currentKey = 'all';
 
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -365,15 +276,6 @@
 
         function backToTop() {
             window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        function calculateReadTime(articleTextElement, outputBadgeElement) {
-            if(!articleTextElement || !outputBadgeElement) return;
-            const text = articleTextElement.innerText;
-            const wpm = 200;
-            const words = text.trim().split(/\s+/).length;
-            const time = Math.ceil(words / wpm);
-            outputBadgeElement.innerText = `قراءة: ${time} دقائق`;
         }
     </script>
 </body>
