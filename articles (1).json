@@ -1,0 +1,13 @@
+{
+    "articles": [
+        {
+            "id": "taiba",
+            "title": "مدينة طيبة: تأملات في الأسطورة",
+            "category": "philosophy",
+            "categoryLabel": "فلسفة",
+            "image": "thebes-article.jpg",
+            "url": "taiba.html",
+            "excerpt": "رحلة في تاريخ مدينة طيبة اليونانية وأساطيرها المؤسسة، من كادموس إلى أمفيون وزيثوس."
+        }
+    ]
+}
