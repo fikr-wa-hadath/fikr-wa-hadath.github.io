@@ -81,24 +81,22 @@
         </div>
         
         <div class="news-grid-flexible" id="articlesGrid">
-            <!-- هنا تبدأ المقالات -->
-            <article class="story-card">
+            <!-- مقال مدينة طيبة المخصص للفلسفة -->
+            <article class="story-card" data-category="philosophy">
                 <div class="story-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800" alt="طيبة">
+                    <img src="taiba.jpg" alt="مدينة طيبة">
                 </div>
                 <div class="gradient-overlay"></div>
                 <div class="story-overlay-content">
                     <span class="badge">فلسفة</span>
-                    <h1><a href="#">مدينة طيبة: تأملات في الأسطورة</a></h1>
+                    <h1><a href="thebes.txt">مدينة طيبة: تأملات في الأسطورة</a></h1>
                 </div>
             </article>
         </div>
     </main>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('sideMenu').classList.toggle('active');
-        }
+        function toggleMenu() { document.getElementById('sideMenu').classList.toggle('active'); }
         
         function darkMode(){
             document.body.classList.toggle("light-mode");
@@ -123,92 +121,34 @@
             
             const lang = document.documentElement.lang || 'ar';
             document.getElementById("sectionHeaderTitle").textContent = translations[lang].sectionTitles[category] || translations[lang].sectionTitles['all'];
+
+            // تفعيل منطق الفلترة للمقالات
+            const articles = document.querySelectorAll('#articlesGrid .story-card');
+            articles.forEach(article => {
+                if (category === 'all' || article.getAttribute('data-category') === category) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
         }
 
-        function searchSite() {
-            // وظيفة البحث
-        }
+        function searchSite() {}
 
         const translations = {
             ar: { 
-                logo: "فكر وحدث", 
-                main: "الرئيسية", 
-                philosophy: "فلسفة", 
-                critique: "نقد أدبي", 
-                sociology: "سوسيولوجيا", 
-                dhawahir: "ظواهر", 
-                books: "كتب", 
-                culture: "ثقافة وفن", 
-                texts: "نصوص", 
-                wisdom: "حكمة", 
-                photo: "صورة", 
-                searchPlaceholder: "ابحث في أرشيف فكر وحدث الفلسفي...",
-                sectionTitles: {
-                    all: "أحدث المقالات الفكرية",
-                    philosophy: "مقالات الفلسفة والتحليل الفكري",
-                    critique: "الدراسات النقدية والأدبية",
-                    sociology: "البحوث والمقالات السوسيولوجية",
-                    dhawahir: "رصد وتفكيك الظواهر المجتمعية",
-                    books: "مراجعات وقراءات في الكتب العالمية",
-                    culture: "متابعات ثقافية وقراءات فنية",
-                    texts: "نصوص إبداعية ومترجمة",
-                    wisdom: "حكم وشذرات فلسفية خالدة",
-                    photo: "قراءات بصرية وتوثيق فوتوغرافي"
-                },
+                logo: "فكر وحدث", main: "الرئيسية", philosophy: "فلسفة", critique: "نقد أدبي", sociology: "سوسيولوجيا", dhawahir: "ظواهر", books: "كتب", culture: "ثقافة وفن", texts: "نصوص", wisdom: "حكمة", photo: "صورة", searchPlaceholder: "ابحث في أرشيف فكر وحدث الفلسفي...",
+                sectionTitles: { all: "أحدث المقالات الفكرية", philosophy: "مقالات الفلسفة والتحليل الفكري", critique: "الدراسات النقدية والأدبية", sociology: "البحوث والمقالات السوسيولوجية", dhawahir: "رصد وتفكيك الظواهر المجتمعية", books: "مراجعات وقراءات في الكتب العالمية", culture: "متابعات ثقافية وقراءات فنية", texts: "نصوص إبداعية ومترجمة", wisdom: "حكم وشذرات فلسفية خالدة", photo: "قراءات بصرية وتوثيق فوتوغرافي" },
                 dir: "rtl" 
             },
             en: { 
-                logo: "Think & Event", 
-                main: "Home", 
-                philosophy: "Philosophy", 
-                critique: "Critique", 
-                sociology: "Sociology", 
-                dhawahir: "Phenomena", 
-                books: "Books", 
-                culture: "Culture & Art", 
-                texts: "Texts", 
-                wisdom: "Wisdom", 
-                photo: "Photo", 
-                searchPlaceholder: "Search in Think & Event philosophical archive...",
-                sectionTitles: {
-                    all: "Latest Intellectual Articles",
-                    philosophy: "Philosophy and Intellectual Analysis Articles",
-                    critique: "Critical and Literary Studies",
-                    sociology: "Sociological Research and Articles",
-                    dhawahir: "Monitoring and Deconstructing Societal Phenomena",
-                    books: "Reviews and Readings of Global Books",
-                    culture: "Cultural Follow-ups and Artistic Readings",
-                    texts: "Creative and Translated Texts",
-                    wisdom: "Immortal Philosophical Wisdom and Fragments",
-                    photo: "Visual Readings and Photographic Documentation"
-                },
+                logo: "Think & Event", main: "Home", philosophy: "Philosophy", critique: "Critique", sociology: "Sociology", dhawahir: "Phenomena", books: "Books", culture: "Culture & Art", texts: "Texts", wisdom: "Wisdom", photo: "Photo", searchPlaceholder: "Search in Think & Event philosophical archive...",
+                sectionTitles: { all: "Latest Intellectual Articles", philosophy: "Philosophy and Intellectual Analysis Articles", critique: "Critical and Literary Studies", sociology: "Sociological Research and Articles", dhawahir: "Monitoring and Deconstructing Societal Phenomena", books: "Reviews and Readings of Global Books", culture: "Cultural Follow-ups and Artistic Readings", texts: "Creative and Translated Texts", wisdom: "Immortal Philosophical Wisdom and Fragments", photo: "Visual Readings and Photographic Documentation" },
                 dir: "ltr" 
             },
             fr: { 
-                logo: "Penser & Événement", 
-                main: "Accueil", 
-                philosophy: "Philosophie", 
-                critique: "Critique", 
-                sociology: "Sociologie", 
-                dhawahir: "Phénomènes", 
-                books: "Livres", 
-                culture: "Culture & Art", 
-                texts: "Textes", 
-                wisdom: "Sagesse", 
-                photo: "Photo", 
-                searchPlaceholder: "Rechercher dans les archives philosophiques de Penser & Événement...",
-                sectionTitles: {
-                    all: "Derniers Articles Intellectuels",
-                    philosophy: "Articles de Philosophie et d'Analyse Intellectuelle",
-                    critique: "Études Critiques et Littéraires",
-                    sociology: "Recherches et Articles Sociologiques",
-                    dhawahir: "Observation et Déconstruction des Phénomènes Sociétaux",
-                    books: "Critiques et Lectures de Livres Mondiaux",
-                    culture: "Suivis Culturels et Lectures Artistiques",
-                    texts: "Textes Créatifs et Traduits",
-                    wisdom: "Sagesse et Fragments Philosophiques Immortels",
-                    photo: "Lectures Visuelles et Documentation Photographique"
-                },
+                logo: "Penser & Événement", main: "Accueil", philosophy: "Philosophie", critique: "Critique", sociology: "Sociologie", dhawahir: "Phénomènes", books: "Livres", culture: "Culture & Art", texts: "Textes", wisdom: "Sagesse", photo: "Photo", searchPlaceholder: "Rechercher dans les archives philosophiques de Penser & Événement...",
+                sectionTitles: { all: "Derniers Articles Intellectuels", philosophy: "Articles de Philosophie et d'Analyse Intellectuelle", critique: "Études Critiques et Littéraires", sociology: "Recherches et Articles Sociologiques", dhawahir: "Observation et Déconstruction des Phénomènes Sociétaux", books: "Critiques et Lectures de Livres Mondiaux", culture: "Suivis Culturels et Lectures Artistiques", texts: "Textes Créatifs et Traduits", wisdom: "Sagesse et Fragments Philosophiques Immortels", photo: "Lectures Visuelles et Documentation Photographique" },
                 dir: "ltr" 
             }
         };
@@ -221,52 +161,33 @@
                 const locales = { ar: 'ar-GB', en: 'en-GB', fr: 'fr-FR' }; 
                 const selectedLocale = locales[lang] || 'ar-GB';
                 
-                let dateStr = now.toLocaleString(selectedLocale, { 
-                    year: 'numeric', 
-                    month: 'numeric', 
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: false
-                });
-
+                let dateStr = now.toLocaleString(selectedLocale, { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
                 if (lang === 'ar') {
                     const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
                     const d = now.toLocaleDateString('en-GB', options).replace(/\//g, '-');
                     const t = now.toLocaleTimeString('en-GB', { hour12: false });
                     dateStr = `${d} ${t}`;
                 }
-
                 document.getElementById("liveDate").textContent = dateStr;
             }, 1000);
         }
 
-        window.onload = function() {
-            startLiveDate('ar');
-        };
+        window.onload = function() { startLiveDate('ar'); };
 
         function changeLang(lang) {
             const data = translations[lang];
             if (!data) return;
-            
             document.documentElement.dir = data.dir;
             document.documentElement.lang = lang;
-            
             document.getElementById("siteLogo").textContent = data.logo;
             document.getElementById("sectionHeaderTitle").textContent = data.sectionTitles[currentSectionKey] || data.sectionTitles['all'];
             document.getElementById("searchInput").placeholder = data.searchPlaceholder;
-            
             document.querySelectorAll('.lang-pill').forEach(btn => btn.classList.remove('active'));
             if(window.event && window.event.currentTarget) window.event.currentTarget.classList.add('active');
-            
             document.querySelectorAll('.nav-txt').forEach(span => {
                 const key = span.getAttribute('data-key');
-                if(data[key]) {
-                    span.textContent = data[key];
-                }
+                if(data[key]) span.textContent = data[key];
             });
-
             startLiveDate(lang);
         }
 
@@ -275,18 +196,11 @@
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             let scrolled = (winScroll / height) * 100;
             document.getElementById("reading-progress").style.width = scrolled + "%";
-
             let backToTopBtn = document.getElementById("backToTopBtn");
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                backToTopBtn.classList.add("show");
-            } else {
-                backToTopBtn.classList.remove("show");
-            }
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) { backToTopBtn.classList.add("show"); } else { backToTopBtn.classList.remove("show"); }
         };
 
-        function backToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
+        function backToTop() { window.scrollTo({top: 0, behavior: 'smooth'}); }
     </script>
 </body>
 </html>
